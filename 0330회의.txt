@@ -1,3 +1,5 @@
+﻿회의자료
+
 필요한 테이블
 ▶  Member 
     - member(회원 테이블) :   id, pw, name, gender,phone_number, email,address,address1,address2,address3,image,status
@@ -34,5 +36,3 @@
 	초록 : #56C271
 	화이트:F8F9FA
 	블랙 :212529
-
-
