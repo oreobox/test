@@ -1,0 +1,38 @@
+필요한 테이블
+▶  Member 
+    - member(회원 테이블) :   id, pw, name, gender,phone_number, email,address,address1,address2,address3,image,status
+    -member_deal(거래내역): no (primary key)/seller_id/buyer_id/product_no(references on product.no)
+		/status(check in(거래중,거래완료)-number 1:거래중 2:거래완료)/deal_date
+    -member_deal_review(거래후기) : seller_id, buyer_id,product_no,contents ,rating, manner_temp,reg_date
+▶  Product 
+    - product(중고상품) : no(primary key)/seller(references on member.id)/subject/address
+			/category(references on product_category)
+	/image-최대5장/content/price/refund_availability-number 0:불가 1:가능/reg_date/
+            status(check in (판매중, 판매완료-number 1:판매중 2:판매완료))/views  
+    -product_like (중고상품 찜하기): no,product_no,user_id(references on member.id)
+    [- product_keyword(인기 검색어 관련): keyword/count]	
+▶  Board 
+    - town_board:  no/subject/cateogory/writer/contents/image/ref/re_leve/re_step/reg_date/views 
+글번호, 글주제(관심주제 선택), 글 내용,  사진등록(최대 5장), 보여줄 지역(최대 5개), 글쓴이(ID), 조회수, 등록시간
+    - town_board_like : no,town_board_no(references on board.no)/user_id
+     [- board_keyword(인기 검색어 관련): keyword/count]
+▶ Category(관리자)
+    -  product_category :  no(primary key)  , name
+    -  board_category: no, name(같이해요, 일상, 동네소식, 동네맛집 등등)
+    - 그 외 관리자 기능:
+      [noticesubject/content/ regdate
+     q&a: writer/subject/con
+     report: report_user_name reported_user_name count
+     시간 남으면 구상하기 안되면 그냥 html로 만들기]
+▶ chat(채팅): no,product_no,user1(references on member.id),user2,contents1,contents2,reg_date(column 수정 필요)
+
+수업 끝나고 다음날 모여서 1)css,스토리보드 정하기 2)chat 테이블 수정하기 3) 이름 정하기
+  	색깔:
+	당근마켓 styelsheet에서 찾은 색상
+	회색 :#ADB5BD/ 495057
+	주황 :#FF8A3D
+	초록 : #56C271
+	화이트:F8F9FA
+	블랙 :212529
+
+
